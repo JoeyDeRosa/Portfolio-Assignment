@@ -43,7 +43,7 @@ a {
   font-size: 30px;
 }
 
-p {
+article {
   display: none;
 }
 
@@ -60,23 +60,13 @@ section {
   padding: 50px;
 }
 
-section:hover p {
+section:hover article {
   display: block;
 }
 
 @media screen and (min-width: 400px) {
   h1 {
     margin-bottom: 50px;
-  }
-
-  img {
-    height: 125px;
-    width: 200px;
-    transform: rotate(270deg);
-    border-radius: 25px;
-    border-width: 12px;
-    border-color: #ffff00;
-    margin: auto;
   }
 
   li {
