@@ -1,10 +1,10 @@
 body {
-  background-color: #94b0da;
+  background-image: url("sticker_bomb_background.jpeg");
   color: #dcedff;
 }
 
 header {
-  background-color: #8f91a2;
+  background-color: #ffff00;
 }
 
 h1 {
@@ -17,6 +17,7 @@ img {
   width: 200px;
   transform: rotate(270deg);
   border-radius: 25px;
+  border-width: 12px;
   margin-top: 15px;
 }
 
@@ -32,27 +33,34 @@ li {
   margin-bottom: 10px;
 }
 
+.navStuff {
+  display: inline;
+}
+
 a {
   color: #dcedff;
   text-decoration: none;
+  font-size: 30px;
 }
 
 p {
   display: none;
 }
 
-.img {
+section {
   text-align: center;
   border-style: solid;
   border-width: 25px;
-  border-color: #8f91a2;
-  background-color: #343f3e;
+  border-color: #ffff00;
+  background-color: #0066ff;
   margin-top: 50px;
   margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 50px;
 }
 
-.img:hover p {
+section:hover p {
   display: block;
 }
 
@@ -61,21 +69,13 @@ p {
     margin-bottom: 50px;
   }
 
-  .myPictureBackground {
-    height: 225px;
-    width: 150px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #343f3e;
-    border-radius: 25px;
-
-  }
-
   img {
     height: 125px;
     width: 200px;
     transform: rotate(270deg);
     border-radius: 25px;
+    border-width: 12px;
+    border-color: #ffff00;
     margin: auto;
   }
 
@@ -93,5 +93,9 @@ p {
 
   body {
     text-align: center;
+  }
+
+  section {
+    width: 75%;
   }
 }
