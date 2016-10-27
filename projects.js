@@ -22,5 +22,13 @@ projectsList.forEach(function(ele) {
 });
 
 theProjects.forEach(function(project) {
-  $('article.projects').append(project.toHtml());
+  $('section.projects').append(project.toHtml());
+});
+
+$('section').mouseenter(function() {
+  $(this).children().not('h2').fadeIn('slow');
+});
+
+$('section').mouseleave(function() {
+  $(this).children().not('h2').fadeOut('slow');
 });
