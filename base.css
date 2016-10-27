@@ -3,6 +3,10 @@ body {
   color: #dcedff;
 }
 
+.contentDiv {
+  display: none;
+}
+
 header {
   background-color: #0066ff;
   border-top-style: solid;
@@ -76,18 +80,21 @@ section {
 @media screen and (min-width: 400px) {
   h1 {
     margin-bottom: 5px;
+    margin-top: 10px;
   }
 
   li {
     display: inline-block;
-    padding-top: 5px;
+    padding-top: 9px;
     padding-left: 25px;
     padding-right: 25px;
+    margin-bottom: 10;
   }
 
   ul {
     text-align: center;
     margin-right: 0;
+    margin-bottom: 0;
   }
 
   body {
@@ -105,7 +112,7 @@ section {
   .selfPhoto {
     position: absolute;
     left: 30px;
-    top: 28px;
+    top: 27px;
   }
 
   article {
