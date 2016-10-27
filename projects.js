@@ -10,7 +10,7 @@ function Projects(obj) {
 Projects.prototype.toHtml = function() {
   var $newProject = $('article.projects').clone();
   $newProject.find('h3').text(this.title);
-  $newProject.find('a').attr('href', this.link);
+  $newProject.find('a').attr('href', this.link).html('<img class="projectImg" />');
   $newProject.find('img.projectImg').attr('src', this.image);
   $newProject.find('p').text(this.description);
   $newProject.removeClass('projects');
