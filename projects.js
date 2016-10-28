@@ -17,6 +17,8 @@ projectsList.forEach(function(ele) {
   theProjects.push(new Projects(ele));
 });
 
-theProjects.forEach(function(project) {
-  $('.projDisplay').append(project.toHtml());
+$('section.projects').mouseenter(function() {
+  theProjects.forEach(function(project) {
+    $('.projDisplay').append(project.toHtml());
+  });
 });

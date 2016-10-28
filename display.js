@@ -1,10 +1,10 @@
 $('section').mouseenter(function() {
-  $('.contentDiv').fadeToggle();
-  $('.sectionDiv').fadeToggle();
+  $('.contentDiv').fadeIn();
+  $('.sectionDiv').fadeOut();
 });
 
-$('section').mouseleave(function() {
-  $('.sectionDiv').fadeToggle();
-  $('.contentDiv').fadeToggle();
+$('section.projDisplay').mouseleave(function() {
+  $('.sectionDiv').fadeIn();
+  $('.contentDiv').fadeOut();
   $('section.projDisplay').children().remove();
 });
