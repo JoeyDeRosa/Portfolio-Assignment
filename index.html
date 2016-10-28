@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="normalize.css">
     <link href="base.css" rel="stylesheet">
+    <script id="about-me-template" type="text/x-handlebars-templates">
+      {{{biography}}}
+    </script>
+    <script id="local-data-template" type="text/x-handlebars-templates">
+      <article class="projects">
+        <h3>{{title}}</h3>
+        <a href="{{link}}" class="projectLink"><img src="{{image}}" class="projectImg"/></a>
+        <p>{{{description}}}</p>
+      </article>
+    </script>
   </head>
   <body>
     <header>
@@ -23,27 +33,21 @@
       </div>
     </header>
     <div class="sectionDiv">
-      <section>
+      <section class="aboutMe">
         <h2>About Me</h2>
-        <article>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in lobortis odio. Etiam odio ante, gravida a molestie a, accumsan auctor purus. Cras dignissim velit pharetra est pretium laoreet. Nullam consequat mi gravida, facilisis nunc in, vestibulum augue. Vestibulum vitae leo posuere, fringilla lectus non, pulvinar nisl. Curabitur malesuada dapibus efficitur. Donec sed elit sed diam laoreet malesuada eu ac enim. Duis eget ultricies sapien. Aliquam consequat nunc venenatis massa faucibus, eu semper velit ultrices. Nulla id diam augue.</p>
-          <p>Nullam laoreet tempus hendrerit. Donec a nunc pulvinar, mollis nisl vitae, elementum risus. Nam finibus, nibh sit amet vestibulum mattis, massa est euismod lorem, id pretium ante diam sed arcu. Vivamus ut interdum mauris. Mauris feugiat urna ligula, in ultrices orci tempor sodales. Nunc et velit pharetra, sagittis nibh ac, dignissim lectus. Nunc ac turpis volutpat, porta libero vel, posuere mauris. Suspendisse porta libero dolor, maximus viverra dolor dapibus eu. Mauris molestie erat vestibulum mi venenatis ultrices. </p>
-        </article>
       </section>
       <section class="projects">
         <h2>My Projects</h2>
-        <article class="projects">
-          <h3></h3>
-          <a href="" class="projectLink"></a>
-          <p></p>
-        </article>
       </section>
     </div>
     <div class="contentDiv">
-      <section class="projects"></section>
+      <section class="projDisplay"></section>
     </div>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script src="projects_list.js"></script>
     <script src="projects.js"></script>
+    <script src="about_me.js"></script>
+    <script src="display.js"></script>
   </body>
 </html>
