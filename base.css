@@ -52,10 +52,6 @@ a {
   font-size: 30px;
 }
 
-article {
-  display: none;
-}
-
 .projectImg {
   height: 175px;
   width: 225px;
@@ -75,6 +71,11 @@ section {
   margin-left: auto;
   margin-right: auto;
   padding: 25px;
+}
+
+.projects {
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 @media screen and (min-width: 400px) {
@@ -107,6 +108,10 @@ section {
     margin-top: 10%;
     margin-left: 5%;
     margin-right: 5%;
+  }
+
+  .projDisplay {
+    width: 75%;
   }
 
   .selfPhoto {
