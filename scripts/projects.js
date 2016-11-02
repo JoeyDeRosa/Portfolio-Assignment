@@ -47,8 +47,19 @@ Projects.fetchAll = function() {
   }
 };
 Projects.fetchAll();
+
+Projects.numWordsAll = function() {
+  return Projects.theProjects.map(function(project) {
+    return project.description.split(' ').length;
+  })
+    .reduce(function(curr, next, index, array) {
+      return curr + next;
+    }, 0);
+};
+
 //adds the projects content to the display field
 $('section.projects').mouseenter(function() {
+  $('h4').text('Number of words ' + Projects.numWordsAll());
   Projects.theProjects.forEach(function(project) {
     $('.projDisplay').append(project.toHtml());
   });
