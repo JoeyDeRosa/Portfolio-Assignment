@@ -72,4 +72,12 @@ section {
   h3 {
     text-align: center;
   }
+
+  p {
+    text-align: left;
+  }
+
+  .projectImg {
+    margin-right: 20px;
+  }
 }
