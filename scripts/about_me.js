@@ -12,5 +12,6 @@ AboutMeObj.prototype.createAboutMe = function() {
 //adds the about me content to the display field
 $('section.aboutMe').mouseenter(function() {
   var object = new AboutMeObj();
+  $('.projDisplay').append('h4').text('');
   $('.projDisplay').append(object.createAboutMe());
 });
