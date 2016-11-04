@@ -30,10 +30,14 @@ Projects.fetchAll = function() {
       success: function(data, msg, xhr) {
         var parseEtag = jQuery.parseJSON(localStorage.etag);
         if(parseEtag !== xhr.getResponseHeader('ETag')) {
-          localStorage.projects_list = JSON.stringify(data);
-          Projects.loadAll(data);
+          $.getJSON('data/projects_list.json').done(function(data, msg, xhr) {
+            localStorage.projects_list = JSON.stringify(data);
+            var etag = xhr.getResponseHeader('ETag');
+            localStorage.etag = JSON.stringify(etag);
+            Projects.loadAll(data);
+          });
         } else {
-          Projects.loadAll(jQuery.parseJSON(localStorage.projects_list));
+          Projects.loadAll($.parseJSON(localStorage.projects_list));
         }
       }
     });
@@ -47,8 +51,19 @@ Projects.fetchAll = function() {
   }
 };
 Projects.fetchAll();
+
+Projects.numWordsAll = function() {
+  return Projects.theProjects.map(function(project) {
+    return project.description.split(' ').length;
+  })
+    .reduce(function(curr, next, index, array) {
+      return curr + next;
+    }, 0);
+};
+
 //adds the projects content to the display field
 $('section.projects').mouseenter(function() {
+  $('.projDisplay').append('h4').text('Number of words ' + Projects.numWordsAll());
   Projects.theProjects.forEach(function(project) {
     $('.projDisplay').append(project.toHtml());
   });
