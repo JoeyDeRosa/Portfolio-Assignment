@@ -11,7 +11,7 @@ header {
   background-color: #0066ff;
 }
 
-h1 {
+h1, h2 {
   text-align: center;
 }
 
@@ -39,6 +39,10 @@ a {
 
 section {
   text-align: center;
+}
+
+input {
+  color: black;
 }
 
 @media screen and (min-width: 400px) {

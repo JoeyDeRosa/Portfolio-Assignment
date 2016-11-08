@@ -19,36 +19,76 @@
   </head>
   <body>
     <header>
-      <h1>Joey DeRosa</h1>
-      <div class="navStuff">
-        <img src="images/me.jpg" class="selfPhoto"/>
+      <div class="home">
+        <h1>Joey DeRosa</h1>
+        <div class="navStuff">
+          <img src="images/me.jpg" class="selfPhoto"/>
+        </div>
+        <div class="navStuff">
+          <nav>
+            <ul>
+              <li><a href="https://github.com/JoeyDeRosa">gitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/joey-derosa-839395128?authType=NAME_SEARCH&authToken=OqMK&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A526476141%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1477422471265%2Ctas%3Ajoey">linkedIn</a></li>
+              <li><a href="https://twitter.com/ImTheJoey?lang=en">twitter</a></li>
+            </ul>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/admin">Admin</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
-      <div class="navStuff">
-        <nav>
-          <ul>
-            <li><a href="https://github.com/JoeyDeRosa">gitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/joey-derosa-839395128?authType=NAME_SEARCH&authToken=OqMK&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A526476141%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1477422471265%2Ctas%3Ajoey">linkedIn</a></li>
-            <li><a href="https://twitter.com/ImTheJoey?lang=en">twitter</a></li>
-          </ul>
-        </nav>
+      <div class="admin">
+        <h1>Joey DeRosa</h1>
+        <h2>Admin Page</h2>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/admin">Admin</a></li>
+        </ul>
       </div>
     </header>
-    <div class="sectionDiv">
-      <section class="aboutMe">
-        <h2>About Me</h2>
-      </section>
-      <section class="projects">
-        <h2>My Projects</h2>
-      </section>
+    <div class="home">
+      <div class="sectionDiv">
+        <section class="aboutMe, homeSections">
+          <h2>About Me</h2>
+        </section>
+        <section class="projects, homeSections">
+          <h2>My Projects</h2>
+        </section>
+      </div>
+      <div class="contentDiv">
+        <section class="projDisplay"></section>
+      </div>
     </div>
-    <div class="contentDiv">
-      <section class="projDisplay"></section>
+    <div class="admin">
+      <div class="sectionDiv">
+        <section class="password">
+          <h2>Password</h2>
+          <label>
+            <input type="text" id="password-input" required>
+          </label>
+        </section>
+      </div>
+      <div class="contentDiv">
+        <section class="editProject">
+          <h1>Edit Projects</h1>
+        </section>
+        <section class="editAboutMe">
+          <h1>Edit About ME</h1>
+          <textarea id="about-me-edit"></textarea>
+          <input type="button" id="submit-about-me" value="Submit">
+        </section>
+      </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script src="scripts/page.js"></script>
     <script src="data/projects_list.json"></script>
     <script src="scripts/projects.js"></script>
     <script src="scripts/about_me.js"></script>
+    <script src="scripts/admin_controll.js"></script>
+    <script src="scripts/page_controller.js"></script>
+    <script src="scripts/routes.js"></script>
     <script src="scripts/display.js"></script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 //displays the content while removing the tabs
-$('section').mouseenter(function() {
+$('section.homeSections').mouseenter(function() {
   $('.contentDiv').show();
   $('.sectionDiv').hide();
 });
