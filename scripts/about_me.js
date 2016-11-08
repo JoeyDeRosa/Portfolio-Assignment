@@ -9,10 +9,10 @@
     var aboutMeRender = Handlebars.compile($aboutMe);
     return aboutMeRender(this);
   };
+  var object = new AboutMeObj();
 
   //adds the about me content to the display field
-  $('section.aboutMe').mouseenter(function() {
-    var object = new AboutMeObj();
+  $('.aboutMe').mouseenter(function() {
     $('.projDisplay').append('h4').text('');
     $('.projDisplay').append(object.createAboutMe());
   });
