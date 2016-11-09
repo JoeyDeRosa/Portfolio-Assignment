@@ -25,13 +25,15 @@
   Projects.fetchAll = function() {
     if (localStorage.projects_list) {
       $.ajax({
-        url: 'data/projects_list.json',
+        url: 'https://api.github.com/users/joeyderosa/repos',
+        headers: {'Authorization': 'token ' + githubToken},
         type: 'HEAD',
         success: function(data, msg, xhr) {
           var parseEtag = jQuery.parseJSON(localStorage.etag);
           if(parseEtag !== xhr.getResponseHeader('ETag')) {
-            $.getJSON('data/projects_list.json').done(function(data, msg, xhr) {
+            $.getJSON('https://api.github.com/users/joeyderosa/repos').done(function(data, msg, xhr) {
               localStorage.projects_list = JSON.stringify(data);
+              console.log(data);
               var etag = xhr.getResponseHeader('ETag');
               localStorage.etag = JSON.stringify(etag);
               Projects.loadAll(data);
