@@ -23,34 +23,10 @@
   };
 
   Projects.fetchAll = function() {
-    if (localStorage.projects_list) {
-      $.ajax({
-        url: 'https://api.github.com/users/joeyderosa/repos',
-        headers: {'Authorization': 'token ' + githubToken},
-        type: 'HEAD',
-        success: function(data, msg, xhr) {
-          var parseEtag = jQuery.parseJSON(localStorage.etag);
-          if(parseEtag !== xhr.getResponseHeader('ETag')) {
-            $.getJSON('https://api.github.com/users/joeyderosa/repos').done(function(data, msg, xhr) {
-              localStorage.projects_list = JSON.stringify(data);
-              console.log(data);
-              var etag = xhr.getResponseHeader('ETag');
-              localStorage.etag = JSON.stringify(etag);
-              Projects.loadAll(data);
-            });
-          } else {
-            Projects.loadAll($.parseJSON(localStorage.projects_list));
-          }
-        }
-      });
-    } else {
-      $.getJSON('data/projects_list.json').done(function(data, msg, xhr) {
-        localStorage.projects_list = JSON.stringify(data);
-        var etag = xhr.getResponseHeader('ETag');
-        localStorage.etag = JSON.stringify(etag);
-        Projects.loadAll(data);
-      });
-    }
+    $.get('https://api.github.com/users/joeyderosa/repos', function(data) {
+      Projects.loadAll(data);
+      console.log(data);
+    });
   };
   Projects.fetchAll();
 
@@ -64,10 +40,10 @@
   };
 
   //adds the projects content to the display field
-  $('.projects').mouseenter(function() {
-    $('.projDisplay').append('h4').text('Number of words ' + Projects.numWordsAll());
+  $('section.projects').mouseenter(function() {
+    $('section.projDisplay').append('h4').text('Number of words ' + Projects.numWordsAll());
     Projects.theProjects.forEach(function(project) {
-      $('.projDisplay').append(project.toHtml());
+      $('section.projDisplay').append(project.toHtml());
     });
   });
   module.Projects = Projects;

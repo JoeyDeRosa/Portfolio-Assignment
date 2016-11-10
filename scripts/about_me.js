@@ -12,9 +12,9 @@
   var object = new AboutMeObj();
 
   //adds the about me content to the display field
-  $('.aboutMe').mouseenter(function() {
-    $('.projDisplay').append('h4').text('');
-    $('.projDisplay').append(object.createAboutMe());
+  $('section.aboutMe').mouseenter(function() {
+    $('section.projDisplay').append('h4').text('');
+    $('section.projDisplay').append(object.createAboutMe());
   });
   module.AboutMeObj = AboutMeObj;
 })(window);
