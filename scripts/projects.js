@@ -23,7 +23,10 @@
   };
 
   Projects.fetchAll = function() {
-
+    $.get('https://api.github.com/users/joeyderosa/repos', function(data) {
+      Projects.loadAll(data);
+      console.log(data);
+    });
   };
   Projects.fetchAll();
 
